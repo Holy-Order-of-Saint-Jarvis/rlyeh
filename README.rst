@@ -2,6 +2,14 @@
 :octopus: R'lyeh
 ================
 
+.. image:: https://img.shields.io/travis/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=flat-square
+   :alt: Travis
+   :target: https://travis-ci.org/Holy-Order-of-Saint-Jarvis/rlyeh
+
+.. image:: https://img.shields.io/codecov/c/github/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=flat-square
+   :alt: Codecov
+   :target: https://codecov.io/gh/Holy-Order-of-Saint-Jarvis/rlyeh
+
 Tecthulu API and simplified Ingress game model.
 
 Development
