@@ -3,15 +3,15 @@
 ================
 
 .. |license-badge| image:: https://img.shields.io/github/license/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=for-the-badge
-   :alt: license
+   :alt: MIT-licensed software (link to license in source control)
    :target: https://github.com/Holy-Order-of-Saint-Jarvis/rlyeh/blob/master/LICENSE
 
-.. |travis-badge| image:: https://img.shields.io/travis/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=for-the-badge
-   :alt: Travis
+.. |travis-badge| image:: https://img.shields.io/travis/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=for-the-badge&logo=travis&label=CI
+   :alt: current Continuous Integration build status (link to CI build)
    :target: https://travis-ci.org/Holy-Order-of-Saint-Jarvis/rlyeh
 
 .. |codecov-badge| image:: https://img.shields.io/codecov/c/github/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=for-the-badge
-   :alt: Codecov
+   :alt: current code coverage status (link to code coverage)
    :target: https://codecov.io/gh/Holy-Order-of-Saint-Jarvis/rlyeh
    
 |license-badge| |travis-badge| |codecov-badge|
