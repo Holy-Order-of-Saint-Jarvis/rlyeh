@@ -18,6 +18,13 @@
 
 Tecthulu API and simplified Ingress game model.
 
+This package is a Python library only; it is used by the |toplevel|_ and |tecthulu-simulator|_ packages.
+
+.. |toplevel| replace:: ``[name TBD]``
+.. _toplevel: https://github.com/Holy-Order-of-Saint-Jarvis/toplevel/
+.. |tecthulu-simulator| replace:: ``tecthulu-simulator``
+.. _tecthulu-simulator: https://github.com/Holy-Order-of-Saint-Jarvis/tecthulu-simulator/
+
 Development
 ===========
 
