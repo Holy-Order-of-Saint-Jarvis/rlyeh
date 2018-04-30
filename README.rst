@@ -2,13 +2,19 @@
 :octopus: R'lyeh
 ================
 
-.. image:: https://img.shields.io/travis/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=flat-square
+.. |license-badge| image:: https://img.shields.io/github/license/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=for-the-badge
+   :alt: license
+   :target: https://github.com/Holy-Order-of-Saint-Jarvis/rlyeh/blob/master/LICENSE
+
+.. |travis-badge| image:: https://img.shields.io/travis/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=for-the-badge
    :alt: Travis
    :target: https://travis-ci.org/Holy-Order-of-Saint-Jarvis/rlyeh
 
-.. image:: https://img.shields.io/codecov/c/github/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=flat-square
+.. |codecov-badge| image:: https://img.shields.io/codecov/c/github/Holy-Order-of-Saint-Jarvis/rlyeh.svg?style=for-the-badge
    :alt: Codecov
    :target: https://codecov.io/gh/Holy-Order-of-Saint-Jarvis/rlyeh
+   
+|license-badge| |travis-badge| |codecov-badge|
 
 Tecthulu API and simplified Ingress game model.
 
