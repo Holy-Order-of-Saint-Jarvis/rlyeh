@@ -18,6 +18,8 @@
 
 Tecthulu API and simplified Ingress game model.
 
+This package is aPython library only; top-level executable code is in the `[name TBD] <https://github.com/Holy-Order-of-Saint-Jarvis/toplevel/>`_ package.
+
 Development
 ===========
 
