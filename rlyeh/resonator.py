@@ -1,5 +1,9 @@
 # coding: utf-8
 
+"""
+Models a deployed resonator.
+"""
+
 import re
 
 import attr
@@ -7,6 +11,14 @@ import attr
 
 @attr.s(slots=True, frozen=True, auto_attribs=True)
 class Resonator(object):
+    """
+    Deployed resonator.
+
+    Attributes:
+        level (int): Resonator level (1-8).
+        health (int): Resonator health (1-100).
+        agent (str): Deploying agent name.
+    """
     level: int = attr.ib()
     agent: str = attr.ib()
     health: int = attr.ib(default=100)

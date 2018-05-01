@@ -1,5 +1,9 @@
 # coding: utf-8
 
+"""
+Models a portal.
+"""
+
 from typing import Dict
 
 import attr
@@ -12,6 +16,17 @@ _DEPLOY_LIMITS = [8, 4, 4, 4, 2, 2, 1, 1]
 
 @attr.s(slots=True, frozen=True, auto_attribs=True)
 class Portal(object):
+    """
+    An Ingress portal.
+
+    Attributes:
+        title (str): Displayed name of the portal.
+        faction (Faction): Controlling faction (or None if uncaptured).
+        owner (str): Capturing agent name (None if uncaptured).
+        resonators: Mapping from position to resonator.
+        level (int): Calculated portal level (1-8).
+        health (int): Calculated portal health (1-6400).
+    """
     title: str
     faction: common.Faction = attr.ib(default=None)
     owner: str = attr.ib(default=None)
