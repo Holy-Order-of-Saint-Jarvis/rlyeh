@@ -31,8 +31,8 @@ class Portal(object):
     faction: common.Faction = attr.ib(default=None)
     owner: str = attr.ib(default=None)
     resonators: Dict[common.Position, Resonator] = attr.ib()
-    level: int = attr.ib(default=None)
-    health: int = attr.ib(init=False, default=None)
+    level: int = attr.ib(init=False)
+    health: int = attr.ib(init=False)
 
     @faction.validator
     def check_faction(self, attribute, value):
@@ -82,22 +82,16 @@ class Portal(object):
                         f"agent '{agent}' has too many level {level} "
                         f'resonators ({count}, limit {limit})')
 
-    @level.validator
-    def check_level(self, attribute, value):
-        expected = Portal._calculate_level(self.resonators)
-        if value is None:
-            object.__setattr__(self, 'level', expected)
-            return
+    @level.default
+    def _level(self):
+        # run the validator before accessing self.resonators
+        self.check_resonators(type(self).resonators, self.resonators)
+        calc = int(sum(r.level for r in self.resonators.values()) / 8.0)
+        # a portal is never level 0, even when uncaptured
+        return max(calc, 1)
 
-        if value != expected:
-            raise ValueError('specified level does not agree with deploys')
-
-    @health.validator
-    def check_health(self, attribute, value):
-        health = sum(r.level * r.health for r in self.resonators.values())
-        object.__setattr__(self, 'health', health)
-
-    @staticmethod
-    def _calculate_level(resonators):
-        levels = [r.level for r in resonators.values()]
-        return max(int(sum(levels) / 8.0), 1)
+    @health.default
+    def _health(self):
+        # run the validator before accessing self.resonators
+        self.check_resonators(type(self).resonators, self.resonators)
+        return int(sum(r.level * r.health for r in self.resonators.values()))
