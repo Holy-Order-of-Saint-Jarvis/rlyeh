@@ -35,7 +35,7 @@ class Portal(object):
     health: int = attr.ib(init=False)
 
     @faction.validator
-    def check_faction(self, attribute, value):
+    def _validate_faction(self, attribute, value):
         if value is None:
             return
 
@@ -43,7 +43,7 @@ class Portal(object):
             raise TypeError('faction must be a Faction value')
 
     @owner.validator
-    def check_owner(self, attribute, value):
+    def _validate_owner(self, attribute, value):
         # owner is set after faction, check mutual dependencies here
         if self.faction is None and value is not None:
             raise TypeError('owner must be set if faction is set')
@@ -62,7 +62,7 @@ class Portal(object):
         return {}
 
     @resonators.validator
-    def check_resonators(self, attribute, value):
+    def _validate_resonators(self, attribute, value):
         by_agent = {}
         for pos, reso in value.items():
             if not isinstance(pos, common.Position):
@@ -85,7 +85,7 @@ class Portal(object):
     @level.default
     def _level(self):
         # run the validator before accessing self.resonators
-        self.check_resonators(type(self).resonators, self.resonators)
+        self._validate_resonators(type(self).resonators, self.resonators)
         calc = int(sum(r.level for r in self.resonators.values()) / 8.0)
         # a portal is never level 0, even when uncaptured
         return max(calc, 1)
@@ -93,5 +93,5 @@ class Portal(object):
     @health.default
     def _health(self):
         # run the validator before accessing self.resonators
-        self.check_resonators(type(self).resonators, self.resonators)
+        self._validate_resonators(type(self).resonators, self.resonators)
         return int(sum(r.level * r.health for r in self.resonators.values()))

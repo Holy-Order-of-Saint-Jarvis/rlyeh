@@ -24,21 +24,21 @@ class Resonator(object):
     health: int = attr.ib(default=100)
 
     @level.validator
-    def check_level(self, attribute, value):
+    def _validate_level(self, attribute, value):
         if not isinstance(value, int):
             raise TypeError('level must be an int')
         if value < 1 or value > 8:
             raise ValueError('level must be between 1 and 8, inclusive')
 
     @agent.validator
-    def check_agent(self, attribute, value):
+    def _validate_agent(self, attribute, value):
         if not isinstance(value, str):
             raise TypeError('agent must be a str')
         if not re.match(r'^[a-zA-Z0-9-]+$', value):
             raise ValueError(f"invalid agent name '{value}'")
 
     @health.validator
-    def check_health(self, attribute, value):
+    def _validate_health(self, attribute, value):
         if not isinstance(value, int):
             raise TypeError('health must be an int')
         if value < 1 or value > 100:
