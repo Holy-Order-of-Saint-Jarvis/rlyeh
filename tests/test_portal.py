@@ -113,12 +113,3 @@ def test_deploy_limits():
                 zip(Position, [Resonator(level, 'bob')] * (limit + 1)))
             with pytest.raises(ValueError):
                 Portal('title', Faction.ENL, 'bob', resos)
-
-
-def test_validate_level():
-    with pytest.raises(ValueError):
-        Portal(title='testing',
-               faction=Faction.ENL,
-               owner='bob',
-               resonators={Position.NORTH: Resonator(8, 'bob')},
-               level=8)
